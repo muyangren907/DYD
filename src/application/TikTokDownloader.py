@@ -109,6 +109,7 @@ class TikTokDownloader:
             1: _("禁用"),
             0: _("启用"),
         }
+        # self.__function_menu = self.complete
         self.__function_menu = (
             (_("复制粘贴写入 Cookie (抖音)"), self.write_cookie),
             (_("从浏览器获取 Cookie (抖音)"), self.browser_cookie),
@@ -277,15 +278,17 @@ class TikTokDownloader:
         while self.running:
             self.__update_menu()
             if not mode:
-                mode = choose(
-                    _("DouK-Downloader 功能选项"),
-                    [i for i, __ in self.__function_menu],
-                    self.console,
-                    separate=(
-                        4,
-                        8,
-                    ),
-                )
+                mode = 5 # 终端交互模式 去除选择
+                # mode = choose(
+                #     _("DouK-Downloader 功能选项"),
+                #     [i for i, __ in self.__function_menu],
+                #     self.console,
+                #     separate=(
+                #         4,
+                #         8,
+                #     ),
+                # )
+                # print(mode)
             await self.compatible(mode)
             mode = None
 

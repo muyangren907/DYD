@@ -326,11 +326,13 @@ class TikTok:
         **kwargs,
     ):
         if not select:
-            select = choose(
-                problem,
-                [i[0] for i in function],
-                self.console,
-            )
+            select = '1' # 使用 accounts_urls 参数的账号链接(推荐)  去除选择
+            # select = choose(
+            #     problem,
+            #     [i[0] for i in function],
+            #     self.console,
+            # )
+            # print(select)
         if select.upper() == "Q":
             self.running = False
         try:
@@ -2287,12 +2289,14 @@ class TikTok:
         self.run_command = run_command
         while self.running:
             if not (select := safe_pop(self.run_command)):
-                select = choose(
-                    _("请选择采集功能"),
-                    [i for i, __ in self.__function],
-                    self.console,
-                    (11,),
-                )
+                select = 1 # 批量下载账号作品(抖音) 去除选择
+                # select = choose(
+                #     _("请选择采集功能"),
+                #     [i for i, __ in self.__function],
+                #     self.console,
+                #     (11,),
+                # )
+                # print(select)
             if select in {
                 "Q",
                 "q",
