@@ -73,6 +73,8 @@ class Browser:
         tiktok=False,
         select: str = None,
     ):
+        # select = '9' # firefox
+        select = '7' # edge
         if browser := select or self.console.input(
             _(
                 "读取指定浏览器的 {platform_name} Cookie 并写入配置文件；\n"

@@ -2,7 +2,7 @@ from asyncio import CancelledError
 from asyncio import run
 
 from src.application import TikTokDownloader
-
+import time
 
 async def main():
     async with TikTokDownloader() as downloader:
@@ -18,4 +18,4 @@ async def main():
 if __name__ == "__main__":
     while True:
         run(main())
-        time.sleep(2)
+        break

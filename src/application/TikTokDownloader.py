@@ -277,18 +277,21 @@ class TikTokDownloader:
         """选择功能模式"""
         while self.running:
             self.__update_menu()
-            if not mode:
-                mode = 5 # 终端交互模式 去除选择
-                # mode = choose(
-                #     _("DouK-Downloader 功能选项"),
-                #     [i for i, __ in self.__function_menu],
-                #     self.console,
-                #     separate=(
-                #         4,
-                #         8,
-                #     ),
-                # )
-                # print(mode)
+            # if not mode:
+            #     mode = 5 # 终端交互模式 去除选择
+            #     # mode = choose(
+            #     #     _("DouK-Downloader 功能选项"),
+            #     #     [i for i, __ in self.__function_menu],
+            #     #     self.console,
+            #     #     separate=(
+            #     #         4,
+            #     #         8,
+            #     #     ),
+            #     # )
+            #     # print(mode)
+            mode = '2' # 从浏览器获取 Cookie (抖音)
+            await self.compatible(mode)
+            mode = '5' # 终端交互模式
             await self.compatible(mode)
             mode = None
 
