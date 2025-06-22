@@ -18,4 +18,4 @@ async def main():
 if __name__ == "__main__":
     while True:
         run(main())
-        break
+        sleep(3600)
