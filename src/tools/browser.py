@@ -73,7 +73,7 @@ class Browser:
         tiktok=False,
         select: str = None,
     ):
-        # select = '9' # firefox
+        #select = '9' # firefox
         select = '7' # edge
         if browser := select or self.console.input(
             _(
